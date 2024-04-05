@@ -2,8 +2,12 @@
 // import { Link } from "react-router-dom";
 import { useState } from "react";
 import "./Login.css";
+import { useNavigate } from 'react-router-dom';
+import Button from '@mui/material/Button';
+
 
 export const Login = () => {
+  const navigate = useNavigate()
   const [valores, setValores] = useState({
     nombre: "",
     pass: "",
@@ -12,6 +16,7 @@ export const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log(valores);
+    navigate('/')
   }
   const handleValores = (e) => {
     // console.log(e.target.name);
@@ -34,7 +39,8 @@ export const Login = () => {
           name="pass"
         />
         <br />
-        <button type="submit"> Login</button>
+        {/* <button type="submit"> Login</button> */}
+        <Button type="submit" variant="contained">Hello world</Button>
       </form>
 
 
